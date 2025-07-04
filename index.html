@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image to PDF Converter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert images to PDF online using this simple, fast and mobile-friendly tool. No login required. Built by Prasad Nirmal.">
+  <meta name="keywords" content="Image to PDF, PDF converter, online image tool, image cropper, Prasad Nirmal">
+  <meta name="author" content="Prasad Nirmal">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="favicon.ico">
+  Image to PDF Converter</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
@@ -89,7 +94,10 @@
     }
     #cropModal {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: rgba(0, 0, 0, 0.8);
       display: none;
       align-items: center;
@@ -153,9 +161,9 @@
     });
     dropArea.addEventListener("click", () => input.click());
     input.addEventListener("change", (e) => {
-      handleFiles(e.target.files);
-      input.value = null; // ✅ allow same file re-selection
-    });
+  handleFiles(e.target.files);
+  input.value = null; // Reset file input to allow same file selection again
+});
 
     function handleFiles(files) {
       Array.from(files).forEach((file) => {
@@ -266,7 +274,7 @@
       }
 
       let baseName = fileNames.length === 1 ? fileNames[0] : "converted";
-      const newName = prompt(`Rename the PDF file or press Cancel to keep \"${baseName}.pdf\"`, baseName);
+      const newName = prompt(`Rename the PDF file or press Cancel to keep "${baseName}.pdf"`, baseName);
       if (newName !== null && newName.trim() !== "") {
         baseName = newName.trim();
       }
